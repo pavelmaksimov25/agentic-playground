@@ -43,7 +43,8 @@
     "forwardPorts": [
         8000,
         2024,
-        2026
+        2026,
+        8765
     ],
     "postAttachCommand": "",
     "postCreateCommand": "pip3 install --user -r requirements.txt",
@@ -61,6 +62,9 @@
         },
         "8000": {
             "label": "FastAPI Server"
+        },
+        "8765": {
+            "label": "Voice api"
         }
     }
 }

@@ -4,6 +4,7 @@ This project demonstrates agentic concepts, orchestration patterns and functiona
 
 The objective is to try out and learn about the following capabilities of intelligent models:
 - Leveraging Tools for model interaction with external systems
+- Implementing a voice agents to fill out reports via audio input
 - Using visual model to ingest and reason about images using a multimodal model
 - Giving up control over the conversation flow using a realtime voice model
 - Handing over structured data types like Knowledge Graphs and Onthologies to models 
@@ -13,6 +14,7 @@ That gives you the chance to learn how to combine these capabilities by orchestr
 - Forcing the model to use and think in Domain Specific Languages to interact with existing code
 - Combining different agent types to solve complex problems through defined interaction patterns
 - Tasking a reasoning model to solve complex problems on its own without orchestration
+- Building and consuming mcp servers from agents
 
 Since there are multiple agentic frameworks and hosting runtimes these will let you see how different collaboration patterns can be implemented:
 - Planned agent interactions can be implemented with any agent framework
@@ -62,8 +64,9 @@ The scope of this workshop covers the following scenarios and technology stacks:
 
 | Name | Description | Technology  |
 | :-- | :--| :-- |
-| [Hello World](./src/01-basic/README.md) | Hello World model | OpenAI |
-| [Multimodal models](./src/02-multimodal-models/README.md) | Multimodel Prompting | OpenAI, Vision model, Realtime model |
+| [Hello World](./src/00-basic/README.md) | Hello World model | OpenAI |
+| [Voice Models](./src/01-voice-agents/README.md) | Voice input | OpenAI, Realtime model |
+| [Multimodal models](./src/02-multimodal-models/README.md) | Multimodel Prompting | OpenAI, Vision model |
 | [Knowledge Graphs](./src/03-complex-data/README.md) | Knowledge graph generation | OpenAI, Structured output |
 | [Onthologies](./src/03-complex-data/README.md) | Onthologies | OpenAI, OWL |
 | [Custom DSL](./src/04-complex-problems/README.md) | Domain specific languages | OpenAI, Tools |
@@ -72,5 +75,4 @@ The scope of this workshop covers the following scenarios and technology stacks:
 | [Multi agent collaboration](./src/07-multi-agent-collaboration/README.mdy) | Multi turn agent collaboration| OpenAI, Semantic Kernel, LangGraph |
 | [Society of agents](./src/08-society-of-agents/README.md) | Dynamic planning | OpenAI, AutoGen, MagenticOne |
 | [Event Driven Agents](./src/09-eventdriven-agents/README.md) | Distributed agents agent platforms| OpenAI, Semantic Kernel, Llama deploy |
-| [Model Context Protocol](./src/10-mcp/README.md) | MCP Servers and clients
-| OpenAI, MCP, LangGraph |
+| [Model Context Protocol](./src/10-mcp/README.md) | MCP Servers and clients | OpenAI, MCP, LangGraph |

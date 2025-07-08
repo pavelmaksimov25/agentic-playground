@@ -22,6 +22,7 @@ client = OpenAI(
 class Node(BaseModel):
     id: int
     label: str
+    attribute: str
     color: str
 
 class Edge(BaseModel):
@@ -40,12 +41,12 @@ class KnowledgeGraph(BaseModel):
         dot.format = 'svg'
 
         for node in self.nodes:
-            dot.node(str(node.id), label=node.label, color=node.color)
+            dot.node(str(node.id), label=node.label, color=node.color, style='filled', fillcolor=node.color)
 
         for edge in self.edges:
             dot.edge(str(edge.source), str(edge.target), label=edge.label, color=edge.color)
         
-        dot.render("knowledge_graph", view=False)
+        dot.render("social_network", view=False, cleanup=True)
     
 
 def generate_graph(input) -> KnowledgeGraph:
@@ -58,6 +59,9 @@ def generate_graph(input) -> KnowledgeGraph:
 
     return completion.choices[0].message.parsed
 
-graph = generate_graph("What is the relationship between cars, wheels and trains in relation to the speed that can be achieved relative to the friction of the wheel and the difference of the material the wheel is made of comparing rubber and steel wheels")
+data = """
+ What is the relationship between cars, wheels and trains in relation to the speed that can be achieved relative to the friction of the wheel and the difference of the material the wheel is made of comparing rubber and steel wheels."""
+
+graph = generate_graph(data + " Please generate a knowledge graph for the above data under the impacts of the influence of components, industry applications costs and durability. Make sure that there are cross relationships and influences among the topics are well reflected.")
 graph.visualize()
 graph.description
