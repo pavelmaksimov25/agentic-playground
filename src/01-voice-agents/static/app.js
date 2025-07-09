@@ -39,7 +39,7 @@ async function startRecording() {
             type: 'session.update',
             session: {
                 turn_detection: {
-                    type: 'server_vad',
+                    type: 'server_vad', // todo :: play with these parameters
                     threshold: 0.7,          // Adjust if necessary
                     prefix_padding_ms: 300,  // Adjust if necessary
                     silence_duration_ms: 500 // Adjust as needed

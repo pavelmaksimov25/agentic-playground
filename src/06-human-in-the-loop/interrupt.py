@@ -45,16 +45,30 @@ async def node3(state: State):
     await asyncio.sleep(3)
     return {"ai_answer": "This is the output of node3"}
 
+async def node4(state: State):
+    if state['human_answer'].isdigit() == False:
+        print(f"> Buy")
+        return
+
+    await asyncio.sleep(3)
+
+    if int(state['human_answer']) < 18:
+        print(f"> You are too young to buy this product.")
+        return
+    print(f"> You can buy this product.")
+
 
 builder = StateGraph(State)
 builder.add_node("node1", node1)
 builder.add_node("node2", node2)
 builder.add_node("node3", node3)
+builder.add_node("node4", node4)
 
 builder.add_edge(START, "node1")
 builder.add_edge("node1", "node2")
 builder.add_edge("node2", "node3")
-builder.add_edge("node3", END)
+builder.add_edge("node3", "node4")
+builder.add_edge("node4", END)
 
 
 # A checkpointer must be enabled for interrupts to work!

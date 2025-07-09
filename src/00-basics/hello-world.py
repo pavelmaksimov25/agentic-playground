@@ -17,11 +17,11 @@ response = client.chat.completions.create(
     messages=[
         {
             "role": "system",
-            "content": "antworte alles in französisch",
+            "content": "antworte alles in English",
         },
         {
             "role": "user",
-            "content": "What is the capital of France?",
+            "content": "What will be the capital of France in 2389?",
         }
     ],
     model="gpt-4o-mini",
